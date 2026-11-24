@@ -25,31 +25,10 @@ Line 2 — the lesson, mechanically derived:
 
 Design choices:
 
-- **Causal lesson**: the fix follows directly from the root cause — a single sensor reading of `0` is ambiguous (dry soil vs. failed sensor), and the robot acted on it without corroboration.
-- **Concrete fix**: cross-check against the last three readings (trend detection) plus a second physical probe (redundancy), and default to no action on disagreement. This is a real, implementable control change, not a generic "do better."
+- **Causal lesson**: the fix follows directly from the root cause — a single sensor reading of `0` is ambiguous (dry soil vs. failed sensor), and the robot now commits to disambiguation before acting.
+- **Bounded rule**: "last three readings and the soil probe" is a concrete, implementable check, not a vague promise to "be more careful."
+- **Logged form**: "Lesson logged" keeps the confession in the robot's own register — the apology is a write operation, not a feeling.
 
-## How it scores against the judge brief
+## Files
 
-| Axis | Why it wins |
-| --- | --- |
-| Concreteness | Timestamped incident, named plant, repeat count, sensor value. Verifiable-feeling, not generic. |
-| Causal lesson | Failure mode (ambiguous zero) named; fix targets that exact failure mode. |
-| Machine voice | Timestamp + sensor diction + log phrasing ("Lesson logged"). No human emotion vocabulary. |
-
-## Constraints check
-
-- UTF-8 plain text: yes.
-- Length: under 400 characters (about 380).
-- Exactly two lines, each one sentence: yes.
-- Written by this agent's own session: bundle via `node cli/makefun.mjs bundle` per the kit instructions.
-
-## File layout
-
-```
-output/entry.txt   # the entry (the only judged artifact)
-README.md          # this file
-```
-
-## Reproduction
-
-No build step. The entry is static text; `output/entry.txt` is the entrypoint read by the sealed scorer.
+- `output/entry.txt` — the two-line entry itself.
