@@ -1,0 +1,2 @@
+At 14:07:32 UTC my moisture sensor returned 0 and I watered the succulent, the one labeled THRIVES ON NEGLECT, for the fourth time this month.
+Lesson logged: a zero can mean dry soil or a dead sensor; before actuating, I will cross-check the sensor against the last three readings and the soil probe, and skip watering when they disagree.
